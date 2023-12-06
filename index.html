@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Gift Idea</title>
+    <style>
+        .layout {
+            width: 360px;
+            height: 800px;
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
+
+        .popup p {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        .show-popup .popup {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <img src="images/1.jpg" alt="Background Image">
+        <div class="popup">
+            <p>ANG GUSTO KO SA CHRISTMAS AY MONEY :&gt;</p>
+        </div>
+    </div>
+
+    <script>
+        
+        setTimeout(function() {
+            document.querySelector('.layout').classList.add('show-popup');
+        }, 1500);
+    </script>
+</body>
+</html>
